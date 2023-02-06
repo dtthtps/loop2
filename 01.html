@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atividade01</title>
+</head>
+<body>
+    <h1>Peças</h1>
+    <div id="texto"></div>
+    <script>
+        let escolha = 1
+        let qualidade = ""
+        let texto = ""
+        let aprovadas = 0
+        let reprovadas = 0
+        let qnt = 0
+
+        while (escolha == 1){
+        escolha = (prompt("Você quer adicionar uma nova peça? 1- Sim, 2- Não."))
+        if (escolha == 1){
+            qualidade = (prompt("A peça está aprovada? 1- Sim, 2- Não.")) 
+           qnt = (prompt("Adicione o número da peça"))
+            qualidade = (prompt("A peça está aprovada? 1- Sim, 2- Não.")) 
+            if (qualidade == 1){
+                qnt = (prompt("Adicione o número da peça"))
+                texto = texto + (qnt) + ". " + "Aprovada" + "</br>"
+                document.getElementById("texto").innerHTML=texto
+                aprovadas++
+            } else{
+                
+                texto = texto + (qnt) + ". " + "Reprovada" + "</br>"
+                document.getElementById("texto").innerHTML=texto
+                reprovadas++
+            }
+           
+
+        }
+
+        }
+
+        texto = texto + "São " + aprovadas + " peças aprovadas e " + reprovadas + " reprovadas."
+        document.getElementById("texto").innerHTML=texto
+    </script>
+</body>
+</html>

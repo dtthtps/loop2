@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade03</title>
+</head>
+
+<body>
+    <h1>Candidato</h1>
+    <div id="texto"></div>
+
+    <script>
+        let texto 
+        let ncandidato
+        let idade
+        let sexo = 0
+        let experiencia
+        let media = 0
+        let count = 0
+        let mulher = 0
+        let homem = 0
+        let ntotalmulher = 0
+        let ntotalhomem = 0
+        let escolha = Number(prompt("Escolha o número de candidatos que você deseja registrar."))
+        while (count < escolha) {
+            count++
+            ncandidato = Number(prompt("Digite o número do candidato"))
+            idade = Number(prompt("Qual a idade do candidato"))
+            sexo = Number(prompt("Qual o sexo do candidato? 1- Masc. 2- Feminino."))
+            experiencia = Number(prompt("O candidato possui experiencia? 1- Sim, 2- Não"))
+            media = (media + idade)
+            if (idade => 18) {
+                if (sexo == 1) {
+                    homem = homem + 1
+                    ntotalhomem++
+
+                } else{
+                    mulher = mulher + 1
+                    ntotalmulher++
+                }
+            }
+            media = media / count
+        texto = "Quantidades de homens maiores de idade com experiencia: " + homem + "</br>" + "Quantidade de mulheres com experiencia: " + mulher + "</br>" + "A idade média dos candidatos é:" + media + "</br>" + "O número total de candidatos mulheres é: " + ntotalmulher + "</br>" + "O número total de candidatos homens é: " + ntotalhomem
+        document.getElementById("texto").innerHTML=texto
+        sexo = 0
+        idade = 0
+
+    }
+       
+    </script>
+</body>
+
+</html>
